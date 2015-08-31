@@ -14,17 +14,14 @@ RUN apt-get update && apt-get install -y \
 	
 ENV anaconda_url https://repo.continuum.io/archive/Anaconda-2.3.0-Linux-x86_64.sh
 ENV anaconda_path /opt/anaconda
-
-RUN wget -nv -O $downloads/anaconda.sh $anaconda_url && \
-    /bin/bash $downloads/anaconda.sh -b -p $anaconda_path
-	
 ENV PATH $anaconda_path/bin:$PATH
 
-RUN conda update -y conda
-
-RUN rm $downloads/anaconda.sh
 # Remove cached package tarballs.
-RUN conda clean -yt
+RUN wget -nv -O $downloads/anaconda.sh $anaconda_url && \
+    /bin/bash $downloads/anaconda.sh -b -p $anaconda_path && \
+	conda update -y conda && \
+	rm $downloads/anaconda.sh && \
+	conda clean -yt
 
 RUN conda info -a
 RUN ipython -c "print 'Hello World'"
