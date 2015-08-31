@@ -26,8 +26,5 @@ RUN rm $downloads/anaconda.sh
 # Remove cached package tarballs.
 RUN conda clean -yt
 
-# For ipython notebook
-EXPOSE 8888
-
 RUN conda info -a
 RUN ipython -c "print 'Hello World'"
