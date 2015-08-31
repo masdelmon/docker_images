@@ -18,7 +18,7 @@ ENV PATH $anaconda_path/bin:$PATH
 
 # Remove cached package tarballs.
 RUN wget -nv -O $downloads/anaconda.sh $anaconda_url && \
-    /bin/bash $downloads/anaconda.sh -b -p $anaconda_path && \
+	/bin/bash $downloads/anaconda.sh -b -p $anaconda_path && \
 	conda update -y conda && \
 	rm $downloads/anaconda.sh && \
 	conda clean -yt
