@@ -15,6 +15,7 @@
 
 * `docker run -it -p 1234:5678 colinfang/anaconda ipython notebook --ip '*' --port 5678 --no-browser`
 * Visit `127.1.2.3:1234` in the host.
+* This also allows remote clients to connect via host_ip:1234.
 
 #### Simple Host (Ad Hoc)
 
