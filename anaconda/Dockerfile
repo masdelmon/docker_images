@@ -27,6 +27,9 @@ ENV PATH $anaconda_path/bin:$PATH
 RUN wget -nv -O $downloads/anaconda.sh $anaconda_url && \
 	/bin/bash $downloads/anaconda.sh -b -p $anaconda_path && \
 	conda update -y conda && \
+	conda update -y numpy && \
+	conda update -y scipy && \
+	conda update -y pandas && \
 	rm $downloads/anaconda.sh && \
 	conda clean -yt
 
