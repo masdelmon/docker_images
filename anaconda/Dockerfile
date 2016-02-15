@@ -10,8 +10,7 @@ ENV downloads /downloads
 RUN mkdir $downloads
 
 RUN apt-get update && \ 
-	apt-get install -y wget
-	libglib2.0-0
+	apt-get install -y wget libglib2.0-0
 	
 ENV anaconda_url https://repo.continuum.io/archive/Anaconda2-2.5.0-Linux-x86_64.sh
 ENV anaconda_path /opt/anaconda
