@@ -13,7 +13,7 @@ RUN apt-get update && \
 	apt-get install -y wget
 	libglib2.0-0
 	
-ENV anaconda_url https://repo.continuum.io/archive/Anaconda-2.3.0-Linux-x86_64.sh
+ENV anaconda_url https://repo.continuum.io/archive/Anaconda2-2.5.0-Linux-x86_64.sh
 ENV anaconda_path /opt/anaconda
 ENV PATH $anaconda_path/bin:$PATH
 
